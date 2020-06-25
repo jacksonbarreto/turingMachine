@@ -3,14 +3,25 @@
 #include <locale.h>
 #include "turingMachine.h"
 
-const QUINTUPLE programming[] = {
+const QUINTUPLE adderProgramming[] = {
         {S0,'1',S1,'B',R},
         {S1,'1',S2,'B',R},
         {S2,'1',S2,'1',R},
         {S2,'+',S3,'1',R},
-        {S1,'+',S3,'B',R}
+        {S1,'+',S3,'B',R},
+        {END_OF_PROGRAM}
 };
-const CONTROLINT finalStates[] = {S3};
+
+const QUINTUPLE programming[] = {
+        {S0,'0',S0,'0',R},
+        {S0,'1',S1,'1',R},
+        {S0,'B',S3,'B',R},
+        {S1,'0',S0,'0',R},
+        {S1,'1',S2,'0',L},
+        {S1,'B',S3,'B',R},
+        {S2,'1',S3,'0',R},
+        {END_OF_PROGRAM}
+};
 
 int main(int argc, char * argv[]) {
 
@@ -27,7 +38,8 @@ int main(int argc, char * argv[]) {
         return EXIT_FAILURE;
     }
 
-    machineTuring(argv[1],programming,5,finalStates,1);
+    machineTuring(argv[1],adderProgramming);
+    //machineTuring(argv[1],programming);
 
     return EXIT_SUCCESS;
 }
