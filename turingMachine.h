@@ -18,7 +18,7 @@
 #define BLANK_STANDARDS 3
 #define BLANK_SYMBOL 'B'
 
-typedef unsigned short int CONTROLINT;
+typedef short int CONTROLINT;
 
 typedef struct _quintuple
 {
