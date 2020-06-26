@@ -4,21 +4,21 @@
 #include "turingMachine.h"
 
 const QUINTUPLE adderProgramming[] = {
-        {S0,'1',S1,'B',R},
-        {S1,'1',S2,'B',R},
+        {S0,'1',S1,BLANK_SYMBOL,R},
+        {S1,'1',S2,BLANK_SYMBOL,R},
         {S2,'1',S2,'1',R},
         {S2,'+',S3,'1',R},
-        {S1,'+',S3,'B',R},
+        {S1,'+',S3,BLANK_SYMBOL,R},
         {END_OF_PROGRAM}
 };
 
 const QUINTUPLE programming[] = {
         {S0,'0',S0,'0',R},
         {S0,'1',S1,'1',R},
-        {S0,'B',S3,'B',R},
+        {S0,BLANK_SYMBOL,S3,BLANK_SYMBOL,R},
         {S1,'0',S0,'0',R},
         {S1,'1',S2,'0',L},
-        {S1,'B',S3,'B',R},
+        {S1,BLANK_SYMBOL,S3,BLANK_SYMBOL,R},
         {S2,'1',S3,'0',R},
         {END_OF_PROGRAM}
 };

@@ -18,7 +18,7 @@ void machineTuring(const char * dataTape, const QUINTUPLE * programming)
     {
         standardizedDataTape = normalizationOfDataTape(dataTape);
         currentState=0;
-        IOHead=WHITE_STANDARDS;
+        IOHead=BLANK_STANDARDS;
         do
         {
             for (i=0; i < programmingSize; i++)
@@ -35,7 +35,7 @@ void machineTuring(const char * dataTape, const QUINTUPLE * programming)
                 }
             }
         }
-        while ((!isFinalStates(currentState,programming,programmingSize)) && standardizedDataTape[IOHead] != '\0' && IOHead >= WHITE_STANDARDS);
+        while ((!isFinalStates(currentState,programming,programmingSize)) && standardizedDataTape[IOHead] != '\0' && IOHead >= BLANK_STANDARDS);
 
         printf("\n%s",standardizedDataTape);
         free(standardizedDataTape);
@@ -64,10 +64,10 @@ static bool isValidAlphabet(const char * dataTape, const QUINTUPLE * programming
 static char * normalizationOfDataTape(const char * dataTape)
 {
     CONTROLINT i;
-    char * newDataTape = calloc(stringLength(dataTape)+(WHITE_STANDARDS*2),sizeof(char));
-    char * whites = calloc(WHITE_STANDARDS,sizeof(char));
-    for (i=0; i<WHITE_STANDARDS;i++)
-        whites[i] = 'B';
+    char * newDataTape = calloc(stringLength(dataTape)+(BLANK_STANDARDS*2),sizeof(char));
+    char * whites = calloc(BLANK_STANDARDS,sizeof(char));
+    for (i=0; i<BLANK_STANDARDS;i++)
+        whites[i] = BLANK_SYMBOL;
 
     sprintf(newDataTape,"%s%s%s",whites, dataTape, whites);
 

@@ -15,7 +15,8 @@
 #define R 1
 #define L 2
 #define END_OF_PROGRAM 99
-#define WHITE_STANDARDS 3
+#define BLANK_STANDARDS 3
+#define BLANK_SYMBOL 'B'
 
 typedef unsigned short int CONTROLINT;
 
