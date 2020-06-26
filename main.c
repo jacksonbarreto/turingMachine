@@ -23,6 +23,17 @@ const QUINTUPLE programming[] = {
         {END_OF_PROGRAM}
 };
 
+const QUINTUPLE adderMultipleParcel[] = {
+        {S0,'1',S0,'1',R},
+        {S0,'+',S1,'1',L},
+        {S0,BLANK_SYMBOL,FS,BLANK_SYMBOL,L},
+        {S1,'1',S1,'1',L},
+        {S1,BLANK_SYMBOL,S2,BLANK_SYMBOL,R},
+        {S2,'1',S3,BLANK_SYMBOL,R},
+        {S3,'1',S0,BLANK_SYMBOL,R},
+        {END_OF_PROGRAM}
+};
+
 int main(int argc, char * argv[]) {
 
     setlocale(LC_ALL,"");
@@ -38,7 +49,8 @@ int main(int argc, char * argv[]) {
         return EXIT_FAILURE;
     }
 
-    machineTuring(argv[1],adderProgramming);
+    machineTuring(argv[1],adderMultipleParcel);
+    //machineTuring(argv[1],adderProgramming);
     //machineTuring(argv[1],programming);
 
     return EXIT_SUCCESS;

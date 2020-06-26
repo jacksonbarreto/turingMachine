@@ -35,7 +35,7 @@ void machineTuring(const char * dataTape, const QUINTUPLE * programming)
                 }
             }
         }
-        while ((!isFinalStates(currentState,programming,programmingSize)) && standardizedDataTape[IOHead] != '\0' && IOHead >= BLANK_STANDARDS);
+        while ((!isFinalStates(currentState,programming,programmingSize)) && standardizedDataTape[IOHead] != '\0' && IOHead >= BLANK_STANDARDS-1);
 
         printf("\n%s",standardizedDataTape);
         free(standardizedDataTape);
@@ -68,6 +68,7 @@ static char * normalizationOfDataTape(const char * dataTape)
     char * whites = calloc(BLANK_STANDARDS,sizeof(char));
     for (i=0; i<BLANK_STANDARDS;i++)
         whites[i] = BLANK_SYMBOL;
+    whites[i] = '\0';
 
     sprintf(newDataTape,"%s%s%s",whites, dataTape, whites);
 

@@ -12,6 +12,7 @@
 #define S1 1
 #define S2 2
 #define S3 3
+#define FS 618
 #define R 1
 #define L 2
 #define END_OF_PROGRAM 99
